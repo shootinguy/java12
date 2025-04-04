@@ -1,73 +1,87 @@
-function check_user_form() {
+document.addEventListener('DOMContentLoaded', function() {
     const nameInput = document.querySelector("#name");
     const emailInput = document.querySelector("#email");
-    const messageElement = document.querySelector("#form_message");
+    const formMessageElement = document.querySelector("#form_message");
+    const checkFormButton = document.querySelector("#checkFormBtn");
 
-    if (nameInput && emailInput && messageElement) {
-        const name = nameInput.value;
-        const email = emailInput.value;
-
-        if (name !== "" && email !== "") {
-            messageElement.textContent = "Form Complete!";
-        } else {
-            messageElement.textContent = "Please fill in both fields.";
-        }
-    } else {
-        console.error("One or more form elements not found.");
-    }
-}
-
-function check_discount() {
     const discountCheckbox = document.querySelector("#student_discount");
     const quantityInput = document.querySelector("#quantity");
-    const messageElement = document.querySelector("#discount_message");
+    const discountMessageElement = document.querySelector("#discount_message");
+    const applyDiscountButton = document.querySelector("#applyDiscountBtn");
 
-    if (discountCheckbox && quantityInput && messageElement) {
-        const checked = discountCheckbox.checked;
-        const quantity = parseInt(quantityInput.value);
-
-        if (checked && quantity > 2) {
-            messageElement.textContent = "Discount Applied!";
-        } else {
-            messageElement.textContent = "No discount available.";
-        }
-    } else {
-        console.error("One or more discount elements not found.");
-    }
-}
-
-function show_badge() {
     const statusInput = document.querySelector("#status");
     const pointsInput = document.querySelector("#points");
-    const messageElement = document.querySelector("#badge_message");
+    const badgeMessageElement = document.querySelector("#badge_message");
+    const checkBadgeButton = document.querySelector("#checkBadgeBtn");
 
-    if (statusInput && pointsInput && messageElement) {
-        const status = statusInput.value.toLowerCase(); 
-        const points = parseInt(pointsInput.value);
-
-        if (status === "active" && !isNaN(points) && points >= 100) {
-            messageElement.textContent = "You earned a badge!";
-        } else {
-            messageElement.textContent = "No badge yet!";
-        }
-    } else {
-        console.error("One or more badge elements not found.");
-    }
-}
-
-function toggle_notice() {
     const notifyCheckbox = document.querySelector("#notify_box");
-    const messageElement = document.querySelector("#notify_message");
+    const notifyMessageElement = document.querySelector("#notify_message");
+    const toggleNotifyButton = document.querySelector("#toggleNotifyBtn");
 
-    if (notifyCheckbox && messageElement) {
-        const notify = notifyCheckbox.checked;
+    if (checkFormButton) {
+        checkFormButton.addEventListener('click', function() {
+            if (nameInput && emailInput && formMessageElement) {
+                const name = nameInput.value;
+                const email = emailInput.value;
 
-        if (!notify) {
-            messageElement.textContent = "Notifications are OFF.";
-        } else {
-            messageElement.textContent = "Notifications are ON.";
-        }
-    } else {
-        console.error("One or more notification elements not found.");
+                if (name !== "" && email !== "") {
+                    formMessageElement.textContent = "Form Complete!";
+                } else {
+                    formMessageElement.textContent = "Please fill in both fields.";
+                }
+            } else {
+                console.error("One or more form elements not found.");
+            }
+        });
     }
-}
+
+    if (applyDiscountButton) {
+        applyDiscountButton.addEventListener('click', function() {
+            if (discountCheckbox && quantityInput && discountMessageElement) {
+                const checked = discountCheckbox.checked;
+                const quantity = parseInt(quantityInput.value);
+
+                if (checked && quantity > 2) {
+                    discountMessageElement.textContent = "Discount Applied!";
+                } else {
+                    discountMessageElement.textContent = "No discount available.";
+                }
+            } else {
+                console.error("One or more discount elements not found.");
+            }
+        });
+    }
+
+    if (checkBadgeButton) {
+        checkBadgeButton.addEventListener('click', function() {
+            if (statusInput && pointsInput && badgeMessageElement) {
+                const status = statusInput.value.toLowerCase();
+                const points = parseInt(pointsInput.value);
+
+                if (status === "active" && !isNaN(points) && points >= 100) {
+                    badgeMessageElement.textContent = "You earned a badge!";
+                } else {
+                    badgeMessageElement.textContent = "No badge yet!";
+                }
+            } else {
+                console.error("One or more badge elements not found.");
+            }
+        });
+    }
+
+    if (toggleNotifyButton) {
+        toggleNotifyButton.addEventListener('click', function() {
+            if (notifyCheckbox && notifyMessageElement) {
+                const notify = notifyCheckbox.checked;
+
+                if (!notify) {
+                    notifyMessageElement.textContent = "Notifications are OFF.";
+                } else {
+                    notifyMessageElement.textContent = "Notifications are ON.";
+                }
+            } else {
+                console.error("One or more notification elements not found.");
+            }
+        });
+    }
+});
