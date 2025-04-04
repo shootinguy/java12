@@ -4,35 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Logical Operators</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div>
-        <input type="text" id="name" placeholder="Name">
-        <input type="text" id="email" placeholder="Email">
-        <button onclick="check_user_form()">Check Form</button>
-        <p id="form_message"></p>
-    </div>
+    <input id="name" placeholder="Name">
+    <input id="email" placeholder="Email">
+    <button onclick="checkUserForm()">Check Form</button>
+    <p id="formMessage"></p>
 
-    <div>
-        <input type="checkbox" id="student_discount" placeholder="Student Discount">
-        <input type="number" id="quantity" placeholder="Quantity">
-        <button onclick="check_discount()">Apply</button>
-        <p id="discount_message"></p>
-    </div>
+    <input type="checkbox" id="studentDiscount"> Student Discount
+    <input type="number" id="quantity" placeholder="Qty">
+    <button onclick="checkDiscount()">Apply</button>
+    <p id="discountMsg"></p>
 
-    <div>
-        <input type="status" placeholder="Status (active/inactive)">
-        <input type="text" id="points" placeholder="Points">
-        <button onclick="show_badge()">Check Badge</button>
-        <p id="badge_message"></p>
-    </div>
+    <input type="text" id="status" placeholder="Status (active/inactive)">
+    <input id="points" placeholder="Points">
+    <button onclick="showBadge()">Check Badge</button>
+    <p id="badgeMsg"></p>
 
-    <div>
-        <input type="checkbox" id="notify_box">
-        <button onclick="toggle_notice()">Toggle</button>
-        <p id="notify_message"></p>
-    </div>
-
-    <script src="main.js"></script>
+    <input type="checkbox" id="notifyBox">
+    <button onclick="toggleNotice()">Toggle</button>
+    <p id="notifyMsg"></p>
+<script src="script.js"></script>
 </body>
 </html>
