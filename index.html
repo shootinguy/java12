@@ -9,29 +9,27 @@
     <div>
         <input type="text" id="name" placeholder="Name">
         <input type="text" id="email" placeholder="Email">
-        <button id="checkFormBtn">Check Form</button>
+        <button onclick="check_user_form()">Check Form</button>
         <p id="form_message"></p>
     </div>
 
     <div>
-        <input type="checkbox" id="student_discount">
-        <label for="student_discount">Student Discount</label>
+        <input type="checkbox" id="student_discount" placeholder="Student Discount">
         <input type="number" id="quantity" placeholder="Quantity">
-        <button id="applyDiscountBtn">Apply</button>
+        <button onclick="check_discount()">Apply</button>
         <p id="discount_message"></p>
     </div>
 
     <div>
-        <input type="text" id="status" placeholder="Status (active/inactive)">
+        <input type="status" placeholder="Status (active/inactive)">
         <input type="text" id="points" placeholder="Points">
-        <button id="checkBadgeBtn">Check Badge</button>
+        <button onclick="show_badge()">Check Badge</button>
         <p id="badge_message"></p>
     </div>
 
     <div>
         <input type="checkbox" id="notify_box">
-        <label for="notify_box">Enable Notifications</label>
-        <button id="toggleNotifyBtn">Toggle</button>
+        <button onclick="toggle_notice()">Toggle</button>
         <p id="notify_message"></p>
     </div>
 
